@@ -1,0 +1,19 @@
+<nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">ACCOUNT</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+        {% if user.is_authenticated %}
+            <li>Hello, {{ user.first_name }}</a></li>
+            <li><a href="{% url 'logout' %}  " >Logout</a></li>
+
+            
+        {% else %}
+            <li><a href=" {% url 'register' %} ">Registration</a></li>
+            <li><a href="{% url 'login' %}  " >Login</a></li>
+            <li><a href="{% url 'logout' %}  " >Logout</a></li>
+
+        {% endif %}
+      </ul>
+    </div>
+  </na
